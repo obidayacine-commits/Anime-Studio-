@@ -1,7 +1,7 @@
 // ========== إعدادات ImageKit ==========
 const IMAGEKIT_URL = "https://ik.imagekit.io/mppzkh4kw";
-const IMG_FOLDER = "/Jujutsu_images";
-const VID_FOLDER = "/Jujutsu_videos";
+const IMG_FOLDER = "/jujutsu_images"; // خليه حروف صغيرة عشان ما يصير مشاكل
+const VID_FOLDER = "/jujutsu_videos";
 const PUBLIC_KEY = "public_ARl66quXEbSw8n30Wv/CZbBbz88=";
 
 let allImages = [];
@@ -14,7 +14,6 @@ function openImage(src, caption) {
   const modalImg = document.getElementById('modalImage');
   const captionDiv = document.getElementById('caption');
   const downloadBtn = document.getElementById('downloadImageBtn');
-
   if (!modal ||!modalImg ||!captionDiv) return console.error('عناصر المودال ناقصة');
 
   modal.style.display = 'block';
@@ -25,7 +24,6 @@ function openImage(src, caption) {
     downloadBtn.href = src.split('?')[0];
     downloadBtn.setAttribute('download', (caption || 'image').replace(/[#\s]/g, '_'));
   }
-
   document.body.style.overflow = 'hidden';
   document.querySelector('.theme-switcher')?.classList.add('hide');
 }
@@ -41,13 +39,12 @@ function openVideo(src, caption) {
   const modalVideo = document.getElementById('modalVideo');
   const captionDiv = document.getElementById('videoCaption');
   const downloadBtn = document.getElementById('downloadVideoBtn');
-
   if (!modal ||!modalVideo ||!captionDiv) return console.error('عناصر المودال ناقصة');
 
   modal.style.display = 'block';
   captionDiv.textContent = caption || 'لا يوجد تعليق';
-
   modalVideo.innerHTML = '';
+
   const source = document.createElement('source');
   source.src = src;
   source.type = 'video/mp4';
@@ -63,7 +60,6 @@ function openVideo(src, caption) {
     downloadBtn.href = src.split('?')[0];
     downloadBtn.setAttribute('download', (caption || 'video').replace(/[#\s]/g, '_'));
   }
-
   document.body.style.overflow = 'hidden';
   document.querySelector('.theme-switcher')?.classList.add('hide');
 }
@@ -83,62 +79,56 @@ function closeVideo() {
 async function loadMetadata() {
   try {
     const res = await fetch('/metadata.json');
-    metadata = await res.json();
+    if (res.ok) metadata = await res.json();
   } catch(e) {
-    console.log("metadata.json غير موجود");
+    console.log("metadata.json غير موجود، بيشتغل بدون بيانات");
     metadata = {};
   }
 }
 
 async function loadImages() {
   try {
-    const url = `https://api.imagekit.io/v1/files?path=${IMG_FOLDER}&limit=1000`;
-    const response = await fetch(url, {
-      headers: { "Authorization": "Basic " + btoa(PUBLIC_KEY + ":") }
-    });
-
+    // استخدام ik-list عشان ما نحتاج CORS ولا Public Key
+    const url = `${IMAGEKIT_URL}${IMG_FOLDER}/?ik-list=1&limit=1000`;
+    const response = await fetch(url);
     if (!response.ok) throw new Error("فشل جلب الصور");
-    const files = await response.json();
 
+    const files = await response.json();
     allImages = files.map(file => {
       const meta = metadata[file.name] || {};
       return {
         id: file.fileId,
         src: file.name,
-        caption: meta.caption || file.name.split(".")[0].replace(/_/g, " "), // مصح هنا
-        tags: meta.tags || ["all"],
+        caption: meta.caption || file.name.split(".")[0].replace(/_/g, "),
+        tags: meta.tags || ["gojo"],
         source: meta.source || ""
       };
     });
-
   } catch (error) {
     console.error(error);
-    document.getElementById("loader").textContent = "خطأ في تحميل الصور";
+    const loader = document.getElementById("loader");
+    if (loader) loader.textContent = "خطأ في تحميل الصور";
   }
 }
 
 async function loadVideos() {
   try {
-    const url = `https://api.imagekit.io/v1/files?path=${VID_FOLDER}&limit=1000`;
-    const response = await fetch(url, {
-      headers: { "Authorization": "Basic " + btoa(PUBLIC_KEY + ":") }
-    });
-
+    const url = `${IMAGEKIT_URL}${VID_FOLDER}/?ik-list=1&limit=1000`;
+    const response = await fetch(url);
     if (!response.ok) throw new Error("فشل جلب الفيديوهات");
-    const files = await response.json();
 
+    const files = await response.json();
     allVideos = files.map(file => {
       const meta = metadata[file.name] || {};
       return {
         id: file.fileId,
         src: file.name,
         poster: meta.poster || "",
-        caption: meta.caption || file.name.split(".")[0].replace(/_/g, " "), // ومصحح هنا
-        tags: meta.tags || ["all"],
+        caption: meta.caption || file.name.split(".")[0].replace(/_/g, "),
+        tags: meta.tags || ["gojo"],
         source: meta.source || ""
       };
     });
-
   } catch (error) {
     console.error(error);
   }
@@ -182,7 +172,7 @@ function showWelcomeMessage(name) {
   const messageText = document.getElementById('messageText');
   if (!messageText) return;
   messageText.innerHTML = name === 'رجاء' || name === 'Rajaa'
-  ? ` Welcome Rajaa<br> أهلاً بك يا رجاء في موقعي<br> أرجو أن ينال إعجابك <span class="special-name">I❤️ you Rajaa</span> `
+   ? ` Welcome Rajaa<br> أهلاً بك يا رجاء في موقعي<br> أرجو أن ينال إعجابك <span class="special-name">I❤️ you Rajaa</span> `
     : ` أهلاً بك يا ${name}<br><br> أرجو أن يعجبك الموقع<br> لا تنسى التواصل معنا إذا اردت إضافة فكرة للموقع أو واجهة مشكلة ما `;
   messageModal.style.display = 'block';
 }
@@ -268,12 +258,11 @@ function initCategoryButtons() {
 
 function filterContent() {
   const items = currentTab === 'Pictures'? allImages : allVideos;
-  const gallery = document.querySelector(`#${currentTab}.gallery`); // مصح المسافة
+  const gallery = document.querySelector(`#${currentTab}.gallery`);
   if(!gallery) return;
 
   const filtered = currentCategory === 'all'? items : items.filter(item => item.tags.includes(currentCategory));
   const itemsToRender = filtered.slice(0, itemsToShow);
-
   gallery.innerHTML = '';
 
   if(filtered.length === 0) {
@@ -500,5 +489,6 @@ document.addEventListener('DOMContentLoaded', async function() {
   showPage('Home');
   initCategoryButtons();
   loadFavoritesState();
-  document.getElementById('loader').style.display = 'none';
+  const loader = document.getElementById('loader');
+  if(loader) loader.style.display = 'none';
 });
