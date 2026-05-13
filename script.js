@@ -1,8 +1,8 @@
 // ========== إعدادات ImageKit ==========
-const IMAGEKIT_URL = "https://ik.imagekit.io/your_id";
-const IMG_FOLDER = "/jujutsu_images";
-const VID_FOLDER = "/jujutsu_videos";
-const PUBLIC_KEY = "public_xxxxxxxxx";
+const IMAGEKIT_URL = "https://ik.imagekit.io/mppzkh4kw";
+const IMG_FOLDER = "/Jujutsu_images";
+const VID_FOLDER = "/Jujutsu_videos";
+const PUBLIC_KEY = "public_ARl66quXEbSw8n30Wv/CZbBbz88=";
 
 let allImages = [];
 let allVideos = [];
