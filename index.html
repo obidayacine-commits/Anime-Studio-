@@ -1,222 +1,149 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anime Studio : Jujutsu kaisen</title>
-<link rel="stylesheet" href="style.css">
-<style>
-/* تأكد هذي موجودة في style.css، حطيتها هنا مؤقتاً عشان يشتغل */
-.tabcontent { display: none; }
-#Home { display: block; }
-.loader { text-align: center; color: white; padding: 40px; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime Studio : Jujutsu kaisen</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Loader -->
-<div id="loader" class="loader">جاري تحميل المحتوى...</div>
-
-<!-- Theme Switcher -->
-<div class="theme-switcher">
-  <button class="theme-toggle-btn" id="themeToggle" title="تغيير الثيم">
-    <span id="currentThemeIcon">☀️</span>
-  </button>
-  <div class="theme-dropdown" id="themeDropdown">
-    <button class="theme-option" data-theme="light"><span>☀️</span> ساطع</button>
-    <button class="theme-option" data-theme="dark"><span>🌙</span> داكن</button>
-    <button class="theme-option" data-theme="colored"><span>🎨</span> ملون</button>
-    <button class="theme-option" data-theme="image"><span>🖼️</span> صورة</button>
-  </div>
-</div>
-
-<!-- Sidebar Toggle Button -->
-<div class="sidebar-toggle">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
-
-<!-- Sidebar -->
-<div class="sidebar">
-  <div class="profile-sidebar" onclick="showPage('Profile')">
-    <img id="sidebarAvatar" src="Screenshot_20250609_124109_Google.jpg" alt="Gojo">
-    <span id="sidebarUsername">الملف الشخصي</span>
-  </div>
-  <h3>Anime Studio: Jujutsu kaisen</h3>
-  <ul>
-    <li><a href="#" class="sidebar-link active" data-tab="Home">Home</a></li>
-    <li><a href="#" class="sidebar-link" data-tab="About">About</a></li>
-    <li><a href="#" class="sidebar-link" data-tab="DMCA">Copyright Policy</a></li>
-    <li><a href="#" class="sidebar-link" data-tab="Contact">Contact</a></li>
-  </ul>
-</div>
-
-<h1>JJK Studio</h1>
-
-<!-- واجهة Home -->
-<div id="Home" class="tabcontent" style="display:block;">
-  <div class="tabs">
-    <button class="tablinks active" data-tab="Pictures">Pictures</button>
-    <button class="tablinks" data-tab="Videos">Videos</button>
+  <!-- Theme Switcher -->
+  <div class="theme-switcher">
+    <button class="theme-toggle-btn" id="themeToggle" title="تغيير الثيم">
+      <span id="currentThemeIcon">☀️</span>
+    </button>
+    <div class="theme-dropdown" id="themeDropdown">
+      <button class="theme-option" data-theme="light"><span>☀️</span> ساطع</button>
+      <button class="theme-option" data-theme="dark"><span>🌙</span> داكن</button>
+      <button class="theme-option" data-theme="colored"><span>🎨</span> ملون</button>
+      <button class="theme-option" data-theme="image"><span>🖼️</span> صورة</button>
+    </div>
   </div>
 
-  <div class="category-bar">
-    <button class="category-btn active" data-tag="all">All</button>
-    <button class="category-btn" data-tag="gojo">#gojo</button>
-    <button class="category-btn" data-tag="sukuna">#sukuna</button>
-    <button class="category-btn" data-tag="yuji">#yuji</button>
-    <button class="category-btn" data-tag="toji">#toji</button>
-    <button class="category-btn" data-tag="megumi">#megumi</button>
-    <button class="category-btn" data-tag="choso">#choso</button>
-    <button class="category-btn" data-tag="suguru">#gito suguru</button>
-    <button class="category-btn" data-tag="yuta">#yuta</button>
+  <!-- Sidebar Toggle Button -->
+  <div class="sidebar-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
 
-  <div id="Pictures" class="tabcontent" style="display:block;">
-    <h2>Photo Gallery</h2>
-    <div class="gallery"></div>
-  </div>
-
-  <div id="Videos" class="tabcontent">
-    <h2>Video Gallery</h2>
-    <div class="gallery"></div>
-  </div>
-</div>
-
-<!-- واجهة About -->
-<div id="About" class="tabcontent">
-  <h2>Who are we</h2>
-  <p class="p-mixed"> We are the <span class="en">Anime Studio</span> team. A group of <span class="en">Software Engineering</span> specialized in programming, web development, or even complete platforms. We are currently working on a project, we cannot receive any job application or offers until further notice. </p>
-  <p class="p-mixed"> <span class="en">Anime Studio: Jujutsu Kaisen</span> is a fan site that collects photos and videos about the anime Jujutsu Kaisen to show it to fans and followers. All rights reserved to their original owners <span class="en">MAPPA/Gege Akutami</span>. If you are a copyright owner and want content removed, please contact us. </p>
-  <p class="p-mixed"> نحن فريق <span class="en">Anime Studio</span>. مجموعة من <span class="en">Software Engineering</span> متخصصين في برمجة التطبيقات، تطوير مواقع الويب، أو حتى منصات كاملة. نعمل على مشروع حاليا، لا يمكننا استقبال أي طلب عمل أو عروض حتى إشعار آخر. </p>
-  <p class="p-mixed"> موقع <span class="en">Anime Studio : Jujutsu kaisen</span> هو معرض للمعجبين يهتم بجمع الصور والفيديوهات حول انمي جوجيتسو كايسن وعرضها للمعجبين. جميع الحقوق محفوظة لأصحابها الأصليين <span class="en">MAPPA/Gege Akutami</span>. إذا كنت صاحب حق وترغب بحذف محتوى تواصل معنا. </p>
-</div>
-
-<!-- واجهة Contact -->
-<div id="Contact" class="tabcontent">
-  <h2>Connect with us</h2>
-  <p class="p-mixed"> If you liked the site and you wanted to support us, or encountered a specific problem, or you wanted to add an idea about the site, do not hesitate to message us: <a href="mailto:animestudio@gmail.com" class="en">animestudio@gmail.com</a> </p>
-  <p class="p-mixed"> If you want to report violated content, or see that there is a copyright violation, contact us via : <a href="mailto:dmca@animestudio.com" class="en">dmca@animestudio.com</a>
-  <p class="p-mixed"> إذا أعجبك الموقع وأردت دعمنا، أو واجهت مشكلة معينة، أو أردت إضافة فكرة حول الموقع، لا تتردد في مراسلتنا على: <a href="mailto:animestudio@gmail.com" class="en">animestudio@gmail.com</a> </p>
-  <p class="p-mixed"> إذا كنت تريد الابلاغ عن محتوى تم انتهاكه، أو رأيت أن هناك مخالفة لحقوق النشر تواصل معنا عبر : <a href="mailto:dmca@animestudio.com" class="en">dmca@animestudio.com</a> </p>
-</div>
-
-<!-- واجهة DMCA الجديدة -->
-<div id="DMCA" class="tabcontent">
-  <h2>DMCA Copyright Policy</h2>
-  <div class="dmca-content">
-    <p class="p-mixed"> <span class="en">Anime Studio</span> respects the intellectual property rights of others. All images and videos displayed belong to their original owners, especially <span class="en">MAPPA Co., Ltd.</span> and the author <span class="en">Gege Akutami</span>. </p>
-    <h3>1. Disclaimer</h3>
-    <p class="p-mixed"> This site is a non-commercial <span class="en">Fan Site</span>. We do not claim ownership of any official anime content, or the images and videos on the site. The purpose is solely to share our love for the work. We are also not responsible for the use of images and videos in a way that violates the publishing policy when they are downloaded. </p>
-    <h3>2. Procedure for Reporting Infringement</h3>
-    <p class="p-mixed"> If you believe that a protected work has been posted on our site in a manner that constitutes infringement, please provide us with: </p>
-    <ul class="dmca-list">
-      <li>1. Your physical or electronic signature.</li>
-      <li>2. Identification of the protected work that you claim has been infringed.</li>
-      <li>3. A direct link to the infringing material on our site.</li>
-      <li>4. Your contact information: email address.</li>
-      <li>5. A statement that the use is not authorized by the owner.</li>
-      <li>6. A statement that the information is accurate under penalty of perjury.</li>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="profile-sidebar" onclick="showPage('Profile')">
+      <img id="sidebarAvatar" src="Screenshot_20250609_124109_Google.jpg" alt="Gojo">
+      <span id="sidebarUsername">الملف الشخصي</span>
+    </div>
+    <h3>Anime Studio: Jujutsu kaisen</h3>
+    <ul>
+      <li><a href="#" class="sidebar-link active" data-tab="Home">Home</a></li>
+      <li><a href="#" class="sidebar-link" data-tab="About">About</a></li>
+      <li><a href="#" class="sidebar-link" data-tab="DMCA">Copyright Policy</a></li>
+      <li><a href="#" class="sidebar-link" data-tab="Contact">Contact</a></li>
     </ul>
-    <h3>3. How to Contact</h3>
-    <p class="p-mixed"> Send your notice to: <a href="mailto:dmca@animestudio.com" class="en">dmca@animestudio.com</a> <br> We will remove the content within 24-48 hours after verifying the notice. </p>
   </div>
-</div>
 
-<!-- واجهة Profile -->
-<div id="Profile" class="tabcontent">
-  <div class="profile-page">
-    <img id="profileAvatar" src="Screenshot_20250609_124109_Google.jpg" alt="Avatar">
-    <h2 id="profileName">الملف الشخصي</h2>
+  <h1>JJK Studio</h1>
+
+  <!-- واجهة Home -->
+  <div id="Home" class="tabcontent">
+    <div class="tabs">
+      <button class="tablinks active" data-tab="Pictures">Pictures</button>
+      <button class="tablinks" data-tab="Videos">Videos</button>
+    </div>
+
+    <div class="category-bar">
+      <button class="category-btn active" data-tag="all">All</button>
+      <button class="category-btn" data-tag="gojo">#gojo</button>
+      <button class="category-btn" data-tag="sukuna">#sukuna</button>
+      <button class="category-btn" data-tag="yuji">#yuji</button>
+      <button class="category-btn" data-tag="toji">#toji</button>
+      <button class="category-btn" data-tag="megumi">#megumi</button>
+      <button class="category-btn" data-tag="choso">#choso</button>
+      <button class="category-btn" data-tag="suguru">#gito suguru</button>
+      <button class="category-btn" data-tag="yuta">#yuta</button>
+    </div>
+
+    <div id="Pictures" class="tabcontent">
+      <h2>Photo Gallery</h2>
+      <div class="gallery"></div>
+    </div>
+
+    <div id="Videos" class="tabcontent">
+      <h2>Video Gallery</h2>
+      <div class="gallery"></div>
+    </div>
+  </div>
+
+  <!-- واجهة About -->
+  <div id="About" class="tabcontent">
+    <h2>Who are we</h2>
+    <p class="p-mixed"> We are the <span class="en">Anime Studio</span> team. A group of <span class="en">Software Engineering</span> specialized in programming, web development, or even complete platforms. We are currently working on a project, we cannot receive any job application or offers until further notice. </p>
+    <p class="p-mixed"> <span class="en">Anime Studio: Jujutsu Kaisen</span> is a fan site that collects photos and videos about the anime Jujutsu Kaisen to show it to fans and followers. All rights reserved to their original owners <span class="en">MAPPA/Gege Akutami</span>. If you are a copyright owner and want content removed, please contact us. </p>
+    <p class="p-mixed"> نحن فريق <span class="en">Anime Studio</span>. مجموعة من <span class="en">Software Engineering</span> متخصصين في برمجة التطبيقات، تطوير مواقع الويب، أو حتى منصات كاملة. نعمل على مشروع حاليا، لا يمكننا استقبال أي طلب عمل أو عروض حتى إشعار آخر. </p>
+    <p class="p-mixed"> موقع <span class="en">Anime Studio : Jujutsu kaisen</span> هو معرض للمعجبين يهتم بجمع الصور والفيديوهات حول انمي جوجيتسو كايسن وعرضها للمعجبين. جميع الحقوق محفوظة لأصحابها الأصليين <span class="en">MAPPA/Gege Akutami</span>. إذا كنت صاحب حق وترغب بحذف محتوى تواصل معنا. </p>
+  </div>
+
+  <!-- واجهة Contact -->
+  <div id="Contact" class="tabcontent">
+    <h2>Connect with us</h2>
+    <p class="p-mixed"> If you liked the site and you wanted to support us, or encountered a specific problem, or you wanted to add an idea about the site, do not hesitate to message us: 
+      <a href="mailto:animestudio@gmail.com" class="en">animestudio@gmail.com</a>
+    </p>
+  </div>
+
+  <!-- واجهة Profile -->
+  <div id="Profile" class="tabcontent">
+    <h2>الملف الشخصي</h2>
+    <div class="profile">
+      <img id="profileAvatar" src="Screenshot_20250609_124109_Google.jpg" alt="Avatar">
+      <h3 id="profileName">الزائر</h3>
+    </div>
     <h3>المفضلة</h3>
-    <div class="gallery" id="favoritesGallery"></div>
+    <div id="favoritesGallery" class="gallery"></div>
   </div>
-</div>
 
-<!-- نافذة الترحيب -->
-<div id="welcomeModal" class="welcome-modal">
-  <div class="welcome-content">
-    <h2>مرحباً بك</h2>
-    <p>الرجاء إدخال اسمك للمتابعة</p>
-    <input type="text" id="usernameInput" placeholder="اكتب اسمك هنا" autocomplete="off">
-    <button onclick="submitUsername()">دخول</button>
+  <!-- واجهة DMCA -->
+  <div id="DMCA" class="tabcontent">
+    <h2>Copyright Policy</h2>
+    <p>هذا الموقع معرض للمعجبين. جميع الحقوق محفوظة لأصحابها الأصليين MAPPA/Gege Akutami.</p>
+    <p>للإبلاغ عن محتوى ينتهك حقوق النشر راسلنا على: animestudio@gmail.com</p>
   </div>
-</div>
 
-<!-- نافذة الرسالة بعد الإدخال -->
-<div id="messageModal" class="welcome-modal">
-  <div class="welcome-content message-box">
-    <div id="messageText"></div>
-    <button onclick="closeMessageModal()">تصفح الموقع</button>
-  </div>
-</div>
-
-<!-- Image Modal -->
-<div id="imageModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeImage()">&times;</span>
-    <a id="downloadImageBtn" class="download-btn" download>تحميل الصورة ⬇️</a>
-    <img id="modalImage" src="">
+  <!-- مودال الصور -->
+  <div id="imageModal" class="modal">
+    <span class="close" onclick="closeImage()">×</span>
+    <img class="modal-content" id="modalImage">
     <div id="caption"></div>
+    <a id="downloadImageBtn" class="download-btn" download>تحميل</a>
   </div>
-</div>
 
-<!-- Video Modal -->
-<div id="videoModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeVideo()">&times;</span>
-    <a id="downloadVideoBtn" class="download-btn" download>تحميل الفيديو ⬇️</a>
-    <video id="modalVideo" controls>
-      <source src="" type="video/mp4">
-    </video>
+  <!-- مودال الفيديو -->
+  <div id="videoModal" class="modal">
+    <span class="close" onclick="closeVideo()">×</span>
+    <video id="modalVideo" class="modal-content" controls></video>
     <div id="videoCaption"></div>
+    <a id="downloadVideoBtn" class="download-btn" download>تحميل</a>
   </div>
-</div>
 
-<script src="script.js"></script>
-<script>
-// كود الثيم
-document.addEventListener('DOMContentLoaded', function() {
-  const themeToggle = document.getElementById('themeToggle');
-  const themeDropdown = document.getElementById('themeDropdown');
-  const themeOptions = document.querySelectorAll('.theme-option');
-  const currentThemeIcon = document.getElementById('currentThemeIcon');
-  const body = document.body;
+  <!-- نافذة الترحيب -->
+  <div id="welcomeModal" class="modal">
+    <div class="modal-content welcome-content">
+      <h2>أهلاً بك!</h2>
+      <p>ما هو اسمك؟</p>
+      <input type="text" id="usernameInput" placeholder="اكتب اسمك هنا">
+      <button onclick="submitUsername()">دخول</button>
+    </div>
+  </div>
 
-  const themeIcons = { light: '☀️', dark: '🌙', colored: '🎨', image: '🖼️' };
-  const savedTheme = localStorage.getItem('theme') || 'light';
-  setTheme(savedTheme);
+  <!-- نافذة الرسالة -->
+  <div id="messageModal" class="modal">
+    <div class="modal-content message-content">
+      <span class="close" onclick="closeMessageModal()">×</span>
+      <p id="messageText"></p>
+    </div>
+  </div>
 
-  themeToggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    themeDropdown.classList.toggle('show');
-  });
-
-  themeOptions.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const theme = btn.dataset.theme;
-      setTheme(theme);
-      localStorage.setItem('theme', theme);
-      themeDropdown.classList.remove('show');
-    });
-  });
-
-  document.addEventListener('click', () => {
-    themeDropdown.classList.remove('show');
-  });
-
-  function setTheme(theme) {
-    body.setAttribute('data-theme', theme);
-    currentThemeIcon.textContent = themeIcons[theme];
-    themeOptions.forEach(btn => {
-      btn.classList.remove('active');
-      if (btn.dataset.theme === theme) {
-        btn.classList.add('active');
-      }
-    });
-  }
-});
-</script>
+  <script src="script.js"></script>
 </body>
 </html>
