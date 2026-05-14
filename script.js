@@ -1,7 +1,7 @@
 // ========== إعدادات ImageKit ==========
 const IMAGEKIT_URL = "https://ik.imagekit.io/mppzkh4kw";
-const IMG_FOLDER = "/jujutsu_images";
-const VID_FOLDER = "/jujutsu_videos";
+const IMG_FOLDER = "/Jujutsu_images";
+const VID_FOLDER = "/Jujutsu_videos";
 
 let allImages = [];
 let allVideos = [];
