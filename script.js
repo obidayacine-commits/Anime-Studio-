@@ -80,8 +80,8 @@ function closeVideo() {
 document.addEventListener('DOMContentLoaded', function() {
     const allImages = [
         { "id": "img1", "src": "https://res.cloudinary.com/dzddi3r56/image/upload/v1778677140/AnimeX_1008715_a3i0n0.jpg", "caption": "غوجو ساتورو ", "tags": ["gojo"] },
-        { "id": "img2", "src": "https://res.cloudinary.com/dzddi3r56/image/upload/v1778852936/g4x0jt8efqnuhwau0xmu.jpg", "caption": "سوكونا ", "tags": ["sukuna"] },
-        { "id": "img3", "src": "Screenshot_20260415_221826_OneDrive.jpg", "caption": "يوجي إتادوري ", "tags": ["yuji"] },
+        { "id": "img2", "src": "https://res.cloudinary.com/dzddi3r56/image/upload/v1778852936/g4x0jt8efqnuhwau0xmu.jpg", "caption": "Google :مصدر الصورة", "tags": ["sukuna"] },
+        { "id": "img3", "src": "https://res.cloudinary.com/dzddi3r56/image/upload/v1778853198/oykam5uvrtp3d4sa5ox7.jpg", "caption": "مصدر الصورة : Google ", "tags": ["toji"] },
         { "id": "img4", "src": "Screenshot_20250607_221633_Chrome.jpg", "caption": "ميغومي ", "tags": ["megumi"] }
     ];
 
