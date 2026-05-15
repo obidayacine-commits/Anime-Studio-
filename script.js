@@ -86,10 +86,28 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
 
     const allVideos = [
-        { "id": "vid1", "src": "https://player.cloudinary.com/embed/?cloud_name=dzddi3r56&public_id=zbggz0gpho044orfe0rx", "poster": "https://player.cloudinary.com/embed/?cloud_name=dzddi3r56&public_id=zbggz0gpho044orfe0rx&profile=cld-default", "caption": "فوشيغورو ميغومي ", "tags": ["megumi"] },
-        { "id": "vid2", "src": "facebook_17756688527978777i.mp4", "poster": "Screenshot_20260416_091106_Video Player.jpg", "caption": " #gojo #toji", "tags": ["gojo", "toji"] },
-        { "id": "vid3", "src": "facebook_1775668852797.mp4", "poster": "VideoCapture_20260416-080255.jpg", "caption": "تشوسو #choso", "tags": ["choso"] }
-    ];
+  { 
+    "id": "vid1", 
+    "src": "https://res.cloudinary.com/dzddi3r56/video/upload/zbggz0gpho044orfe0rx.mp4",
+    "poster": "https://res.cloudinary.com/dzddi3r56/video/upload/so_0/zbggz0gpho044orfe0rx.jpg",
+    "caption": "فوشيغورو ميغومي ", 
+    "tags": ["megumi"] 
+  },
+  { 
+    "id": "vid2", 
+    "src": "https://res.cloudinary.com/dzddi3r56/video/upload/r7kdby3385vimthgtdor.mp4",
+    "poster": "https://res.cloudinary.com/dzddi3r56/video/upload/so_0/r7kdby3385vimthgtdor.jpg",
+    "caption": " #gojo #toji", 
+    "tags": ["gojo", "toji"] 
+  },
+  { 
+    "id": "vid3", 
+    "src": "facebook_1775668852797.mp4", 
+    "poster": "VideoCapture_20260416-080255.jpg", 
+    "caption": "تشوسو #choso", 
+    "tags": ["choso"] 
+  }
+];
 
     let currentCategory = 'all';
     let currentTab = 'Pictures';
