@@ -640,16 +640,6 @@ https://www.instagram.com/reel/DXs_w5kChjj/?igsh=MWRiNmUwYThub3Z6NA==
     margin-bottom: 25px;
 }
 
-.special-name {
-    font-family: 'Brush Script MT', cursive;
-    font-size: 7vw;
-    background: linear-gradient(to right, #FF0000, #FF69B4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-top: 15px;
-    display: block;
-}
 
 @media (min-width: 768px) {
     .welcome-content h2 { font-size: 2.5rem; }
